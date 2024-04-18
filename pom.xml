@@ -60,6 +60,38 @@
 				<artifactId>jetty-maven-plugin</artifactId>
 				<version>9.4.10.v20180503</version>
 			</plugin>
+            <!-- Maven Exec Plugin configuration -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.0.0</version>
+                <executions>
+                    <execution>
+                        <id>remove-old-docker-image</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <configuration>
+                            <executable>docker</executable>
+                            <workingDirectory>${project.basedir}/docker</workingDirectory>
+                            <commandlineArgs>rmi iapedus:latest</commandlineArgs>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>build-docker-image</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <configuration>
+                            <executable>docker</executable>
+                            <workingDirectory>${project.basedir}/docker</workingDirectory>
+                            <commandlineArgs>build -t iapedus:latest .</commandlineArgs>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
 		</plugins>
 	</build>
 
