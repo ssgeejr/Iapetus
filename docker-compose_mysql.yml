@@ -1,0 +1,23 @@
+version: '3.8'
+services:
+
+# ####### MYSQL #######
+    db:
+        image: mysql:5.7
+        container_name: iapetusdb
+        restart: always
+        environment:
+            MYSQL_DATABASE: 'iapetus'
+            MYSQL_USER: 'iapetus'
+            MYSQL_PASSWORD: 'saturn'
+            MYSQL_ROOT_PASSWORD: 'outermostSaturnMoon'
+        volumes:
+            - /opt/apps/iapetus/mysql:/var/lib/mysql
+            - ./mysql:/docker-entrypoint-initdb.d/:ro
+
+    ui:
+        image: iapetus
+        container_name: iapetusui
+        ports:
+            - 8080:8080
+            - 8443:8443
