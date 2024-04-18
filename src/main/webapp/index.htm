@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Iapetus</title>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+    .content {
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+<div class="content">
+    <h1>It's good to see you.</h1>
+    <p>The Current date and time is <span id="datetime"></span></p>
+</div>
+
+<script>
+    function updateDateTime() {
+        var now = new Date();
+        var dateString = now.toLocaleString();
+        document.getElementById('datetime').textContent = dateString;
+    }
+
+    updateDateTime(); // Update date and time on load
+    setInterval(updateDateTime, 1000); // Update date and time every second
+</script>
+</body>
+</html>

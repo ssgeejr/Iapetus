@@ -1,0 +1,8 @@
+Initialize Terraform:
+Run [terraform init] in the terminal within the directory containing your Terraform configuration file. This command initializes the working directory containing Terraform configuration files.
+
+Plan Your Deployment:
+Execute [terraform plan] to see the execution plan, which describes what actions Terraform will take to change the infrastructure to match the configuration.
+
+Apply the Configuration:
+Run [terraform apply] and confirm the action to apply the described changes. This command will provision the EC2 instance and security group according to the settings specified in the script.
