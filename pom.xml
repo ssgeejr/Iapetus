@@ -67,7 +67,7 @@
                 <executions>
                     <execution>
                         <id>remove-old-docker-image</id>
-                        <phase>package</phase>
+                        <phase>clean</phase>
                         <goals>
                             <goal>exec</goal>
                         </goals>
