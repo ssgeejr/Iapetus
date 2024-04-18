@@ -1,6 +1,4 @@
 # Iapetus
-project that enables users to post and track their triathlon training records
-
 Mission statement: to create a project that enables users to post and track their triathlon training records on a single AWS EC2 instance using Docker with MySQL and Tomcat is a great idea. Below, I'll outline the project structure, key components, and steps to get started.
 
 **Project Overview**
