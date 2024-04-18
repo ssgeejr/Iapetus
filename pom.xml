@@ -50,7 +50,6 @@
 				<artifactId>maven-war-plugin</artifactId>
 				<version>3.3.2</version>
 				<configuration>
-					<warName>iapetus</warName>
 					<outputDirectory>docker/</outputDirectory>
 				</configuration>
 			</plugin>
@@ -68,7 +67,7 @@
                 <executions>
                     <execution>
                         <id>remove-old-docker-image</id>
-                        <phase>package</phase>
+                        <phase>pre-integration-test</phase>
                         <goals>
                             <goal>exec</goal>
                         </goals>
